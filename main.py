@@ -12,6 +12,8 @@ import sys
 import random
 
 
+LINK = "https://bgdo.typewriter.at/index.php?r=site/index"
+
 # initialize browser options
 options = Options()
 options.add_experimental_option("detach", True)
@@ -42,7 +44,7 @@ characters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 # initialize, open browser and wait for user to select exercise
 driver = webdriver.Chrome(service=Service(
     ChromeDriverManager().install()), options=options)
-driver.get("https://at4.typewriter.at/index.php?r=user/overview")
+driver.get(LINK)
 print("Anmelden und Lektion auswählen...")
 start_button = WebDriverWait(driver, 3600).until(EC.presence_of_element_located((By.CLASS_NAME, "ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons.ui-resizable")))
 print("Lektion ausgewählt!")
